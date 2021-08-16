@@ -39,6 +39,9 @@ function _fetchVersion {
         (.tagName|test("alpha|beta|rc";"i")|not)
       ))[0] |
       .tagName' <<<"$GQL_JSON" 2>/dev/null)
+    case $REPO_VER in
+      null|'') REPO_VER=$(jq -r '.data.repository.releases.nodes[0] | .tagName' <<<"$GQL_JSON" 2>/dev/null) ;;
+    esac
     echo "$REPO_VER"
   fi
 }
@@ -90,7 +93,7 @@ done < <(
   awk -v pfx=$pfx 'BEGIN { FS="\t" } { printf "%s/%s\t%s: %s\n",pfx,$1,$2,$3 }' |
   sed $'s/\t/\u00a0\t/g' |
   column -s$'\t' -t |
-  fzf -i --exact --multi --no-hscroll --no-mouse --no-select-1 \
+  fzf -i ${1:+-q $1} --exact --multi --no-hscroll --no-mouse --no-select-1 \
       --delimiter $'\u00a0' \
       --with-nth 1,2 \
       --header="$FZF_HEADER" \
