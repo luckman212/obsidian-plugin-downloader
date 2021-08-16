@@ -2,7 +2,11 @@
 
 # Obsidian Plugin Downloader
 
-### What
+### Demo Video
+
+https://user-images.githubusercontent.com/1992842/129498054-6426ec90-5c12-4907-a5a0-f03988b15914.mp4
+
+### What?
 
 This is a script to search, download and maintain a local repository of Obsidian plugins, which can be used as a reference for other developers.
 
