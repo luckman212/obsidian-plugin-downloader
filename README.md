@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/1992842/129498054-6426ec90-5c12-4907-a
 
 ### What?
 
-This is a script to search, download and maintain a local repository of Obsidian plugins, which can be used as a reference for other developers.
+This is a script to search, download and maintain a local repository of Obsidian plugins, which can be used as a reference for your own research and development.
 
 ### Why?
 
