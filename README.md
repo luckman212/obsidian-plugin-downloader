@@ -34,4 +34,8 @@ As an absolute beginner to TypeScript, and a lover of [Obsidian](https://obsidia
 
 ### Next...
 
-It's nice to have a tool like [`ripgrep`](https://github.com/BurntSushi/ripgrep) to search through the code if you are looking for API references etc.
+It's nice to have a tool like [`ripgrep`](https://github.com/BurntSushi/ripgrep) to search through the code if you are looking for API references etc. For example:
+
+```
+rg 'this.app.workspace.onLayoutReady' --glob '*.ts'
+```
