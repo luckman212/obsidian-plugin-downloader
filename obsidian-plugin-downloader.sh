@@ -28,9 +28,9 @@ EOQ
 
 function _fetchVersion {
   local REPO_VER
-  USER=${1%%/*}
+  OWNER=${1%%/*}
   REPO=${1##*/}
-  GQL_JSON=$(gh api graphql --field owner="$USER" --field name="$REPO" --raw-field query="$GQL_QUERY")
+  GQL_JSON=$(gh api graphql --field owner="$OWNER" --field name="$REPO" --raw-field query="$GQL_QUERY")
   if [ -n "$GQL_JSON" ] && [ "$GQL_JSON" != "null" ]; then
     REPO_VER=$(jq -r '.data.repository.releases.nodes |
       map(select(
